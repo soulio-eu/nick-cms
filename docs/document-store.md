@@ -1,6 +1,6 @@
 # Document store
 
-Any data without a [first-party domain](domains.md) lives in one generic table and is accessed through typed collections.
+Typed collections over the generic document table ([ADR 0006](adr/0006-domains-and-document-store.md)).
 
 ```ts
 export const testimonials = defineCollection({
@@ -16,18 +16,15 @@ await repo.create({ author: 'Jana', quote: '…', rating: 5 });
 
 `DocumentRepository<T>`: `get(id)`, `getByKey(key)`, `list({ limit, cursor })`, `create(data, { key? })`, `update(id, data)`, `delete(id)`.
 
-- Writes validate against the schema before storing. Invalid input throws `DocumentValidationError`.
-- Reads validate too. A stored document that fails throws `DocumentValidationError` carrying the id and the issues.
+- A write with invalid input throws `DocumentValidationError`.
+- A read of a stored document that fails validation throws `DocumentValidationError` carrying the id and the issues.
 - `key` is an optional per-type unique string, for slug-style lookup without querying JSON.
 
 ## Schemas
 
-- Schemas are Zod schemas.
-- The admin UI derives collection forms from them through `z.toJSONSchema`. UI hints (label, widget, order) live in `.meta()`.
-- Each document stores `schemaVersion`. A collection may declare `version` and `migrate(old, fromVersion)`, applied on read.
+Schemas, validation and versioning are decided in [ADR 0007](adr/0007-zod-schemas-validated-on-write-and-read.md).
 
-## Limits
-
-Filtering by fields inside `data` is out of v1. Data that needs filtering or relations is a candidate for a first-party domain.
+- Admin forms are generated through `z.toJSONSchema`. UI hints (label, widget, order) go in `.meta()`.
+- Optional collection fields: `version`, `migrate(old, fromVersion)`. The stored field is `schemaVersion`.
 
 The table layout is in [Storage](storage.md#tables).
