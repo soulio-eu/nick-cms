@@ -2,13 +2,17 @@
 
 Before doing any work, load and follow the `house-rules` skill.
 
-## Project brief
+## Where to find things
 
-The project brief is the description of the Linear project "Nick CMS". Fetch it with one call to the Linear MCP `get_project` tool:
+- [README.md](README.md): what Nick is, the scope of v1, development setup.
+- [docs/index.md](docs/index.md): index of every design document. Find the document for the area you touch there.
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): packages, layers, dependency rules, ADR index. Read it before any change that adds a package, crosses a package boundary or changes a public interface.
 
-- id: `6aaf96a1-9242-4da3-90de-4e2ab5b7f021`
+The docs are the source of truth for scope and design. When a change contradicts them, raise it instead of following the code or the issue silently. Architectural decisions are recorded as ADRs; see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md#architecture-decision-records).
 
-Treat that description as the source of truth for scope and design decisions.
+## Issues
+
+Work is tracked in GitHub Issues on `soulio-eu/nick-cms`. Use the `gh` CLI to read and update them.
 
 ## Toolchain
 

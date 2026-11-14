@@ -6,7 +6,28 @@ Nick is a library, not a framework: it plugs into a stock `sv create` project an
 
 ## Status
 
-Pre-release. No package is published yet.
+Pre-release. No package is published yet. The [documentation](docs/index.md) describes the v1 design ahead of the implementation.
+
+## Scope of v1
+
+In scope:
+
+- First-party domains: site settings, pages, posts, menus, users (profiles and roles, not authentication).
+- A catch-all document store with typed collections validated on read and write.
+- Typed dependency injection over Svelte's `createContext`, and an `App` boundary that degrades gracefully.
+- Admin UI: unstyled, overridable Svelte components for listing and editing each domain and collection.
+- SvelteKit server integration and SEO helpers (meta, JSON-LD, sitemap, robots, RSS).
+- One storage adapter: Cloudflare D1.
+
+Out of scope:
+
+- Authentication. The admin UI calls a consumer-supplied authorize hook.
+- Media and file storage, i18n, multi-tenancy, a plugin system.
+- Firestore and Node storage adapters. The storage port must allow them.
+
+## Documentation
+
+Start at [docs/index.md](docs/index.md). The package layout and layer rules are in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 ## Development
 
@@ -29,3 +50,11 @@ Format:
 pnpm format        # rewrite files
 pnpm format:check  # check only, as CI does
 ```
+
+## Issues
+
+Bugs, proposals and planned work are tracked in [GitHub Issues](https://github.com/soulio-eu/nick-cms/issues).
+
+## License
+
+[MIT](LICENSE)
