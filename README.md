@@ -14,3 +14,18 @@ Requirements:
 
 - Node.js, at the major version in `.nvmrc`. With nvm, run `nvm use` in the repository root.
 - pnpm, at the version in the `packageManager` field of `package.json`.
+
+Set up:
+
+```sh
+pnpm install
+```
+
+`pnpm install` also installs the git hooks (lefthook): a Prettier check on staged files before commit, and commitlint on the commit message. Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/); releases are derived from them.
+
+Format:
+
+```sh
+pnpm format        # rewrite files
+pnpm format:check  # check only, as CI does
+```
