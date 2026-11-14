@@ -4,7 +4,7 @@ These documents describe the design of Nick v1. The scope of v1 is in the [READM
 
 | Document                                                  | Covers                                                               |
 | --------------------------------------------------------- | -------------------------------------------------------------------- |
-| [Architecture](ARCHITECTURE.md)                           | Packages, layers, dependency rules, composition roots, ADR index     |
+| [Architecture](ARCHITECTURE.md)                           | Package list, ADR index                                              |
 | [Getting started](getting-started.md)                     | Wiring Nick into a fresh SvelteKit project                           |
 | [Dependency injection](dependency-injection.md)           | Context triplets, `NickApp`, failure handling                        |
 | [First-party domains](domains.md)                         | Site settings, pages, posts, menus, users                            |

@@ -6,7 +6,7 @@ Before doing any work, load and follow the `house-rules` skill.
 
 - [README.md](README.md): what Nick is, the scope of v1, development setup.
 - [docs/index.md](docs/index.md): index of every design document. Find the document for the area you touch there.
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): packages, layers, dependency rules, ADR index. Read it before any change that adds a package, crosses a package boundary or changes a public interface.
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): package list and ADR index. Read the relevant ADRs before any change that adds a package, crosses a package boundary or changes a public interface.
 
 The docs are the source of truth for scope and design. When a change contradicts them, raise it instead of following the code or the issue silently. Architectural decisions are recorded as ADRs; see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md#architecture-decision-records).
 

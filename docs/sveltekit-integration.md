@@ -1,6 +1,6 @@
 # SvelteKit integration and SEO
 
-The `kit` package connects the core to SvelteKit. Its place in the layers is in [Architecture](ARCHITECTURE.md#layers).
+The `kit` package connects the core to SvelteKit. Its place in the layers is in [ADR 0003](adr/0003-core-owns-the-ports.md).
 
 | Export                  | Kind             | Does                                                                                                                                      |
 | ----------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
