@@ -6,7 +6,7 @@ The `kit` package connects the core to SvelteKit. Its place in the layers is in 
 | ----------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | `nickHandle(options)`   | `Handle`         | Builds the per-request container on `locals.nick`; composable with `sequence`                                                             |
 | `locals.nick.loadApp()` | load helper      | Health check plus settings and menus, as a serializable `NickAppData`                                                                     |
-| `<NickApp>`             | component        | Provides context keys, renders `fallback` on failure (see [Dependency injection](dependency-injection.md))                                |
+| `<NickApp>`             | component        | Provides context keys, renders `fallback` on failure (see [ADR 0011](adr/0011-degrade-to-a-fallback.md))                                  |
 | `<Seo>`                 | component        | `<svelte:head>` title, description, canonical, Open Graph, Twitter card, JSON-LD; defaults from site settings, overrides per page or post |
 | `sitemap(options)`      | `RequestHandler` | `sitemap.xml` from published pages and posts                                                                                              |
 | `robots(options)`       | `RequestHandler` | `robots.txt` with the sitemap URL                                                                                                         |

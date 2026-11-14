@@ -11,7 +11,7 @@ Each domain is an entity type, a repository port with CRUD plus the queries site
 | User          | email, display name, role, avatar URL                         | `getByEmail`                                 | Email unique; roles are a fixed set (`admin`, `editor`, `author`) |
 
 - Status is `draft` or `published`.
-- Body is stored as Tiptap (ProseMirror) JSON and edited with Tiptap in the admin UI. The library ships an HTML renderer for SSR; consumers can render the JSON themselves.
+- The body format is in [ADR 0012](adr/0012-rich-text-as-tiptap-json.md).
 - Users are profiles and roles; authentication is [out of v1 scope](../README.md#scope-of-v1).
 
-Data that does not fit a first-party domain goes in the [document store](document-store.md). How domains are persisted is in [Storage](storage.md).
+Other data goes in the [document store](document-store.md) ([ADR 0006](adr/0006-domains-and-document-store.md)). How domains are persisted is in [Storage](storage.md).
