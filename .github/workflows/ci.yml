@@ -13,15 +13,6 @@ concurrency:
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  format:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: pnpm/setup@v3
-        with:
-          require-lockfile: true
-      - run: pnpm format:check
-
   commitlint:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
@@ -36,3 +27,34 @@ jobs:
           pnpm exec commitlint --verbose
           --from ${{ github.event.pull_request.base.sha }}
           --to ${{ github.event.pull_request.head.sha }}
+
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: pnpm/setup@v3
+        with:
+          require-lockfile: true
+      - name: Format
+        run: pnpm format:check
+      # Pull requests that change only packages, apps or docs gate the affected projects; anything else gates all.
+      - name: Select projects
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          selection=--recursive
+          if [ "$EVENT" = pull_request ] && ! git diff --name-only "$BASE" HEAD | grep -qvE '^(packages|apps|docs)/'; then
+            selection="--filter=...[$BASE]..."
+          fi
+          echo "SELECTION=$selection" >> "$GITHUB_ENV"
+      - name: Build
+        run: pnpm "$SELECTION" run --if-present build
+      - name: Check
+        run: pnpm "$SELECTION" run --if-present check
+      - name: Lint
+        run: pnpm "$SELECTION" run --if-present lint
+      - name: Test
+        run: pnpm "$SELECTION" run --if-present test

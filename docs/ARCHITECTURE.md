@@ -34,3 +34,4 @@ Add every new or superseding ADR to this index. The format is in [ADR 0001](adr/
 | [0012](adr/0012-rich-text-as-tiptap-json.md)                | Rich text as Tiptap JSON                   |
 | [0013](adr/0013-unstyled-overridable-admin-components.md)   | Unstyled, overridable admin components     |
 | [0014](adr/0014-independent-package-versions.md)            | Independent package versions               |
+| [0015](adr/0015-shared-root-tooling-and-named-gates.md)     | Shared root tooling and named gates        |
