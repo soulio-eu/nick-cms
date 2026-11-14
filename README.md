@@ -27,7 +27,7 @@ Out of scope:
 
 ## Documentation
 
-Start at [docs/index.md](docs/index.md). The package layout and layer rules are in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+Start at [docs/index.md](docs/index.md). Architectural decisions are indexed in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md#architecture-decision-records).
 
 ## Development
 

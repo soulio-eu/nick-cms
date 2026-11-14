@@ -1,6 +1,6 @@
 # Storage
 
-`core` defines a `Store` port that yields every repository. The D1 adapter implements it with SQL; other adapters implement the same port.
+The `Store` port: [ADR 0003](adr/0003-core-owns-the-ports.md). The D1 adapter implements it with SQL.
 
 ## Tables
 

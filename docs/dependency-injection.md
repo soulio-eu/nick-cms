@@ -1,6 +1,6 @@
 # Dependency injection
 
-Components receive dependencies through Svelte context, provided by `<NickApp>`. Why there are two composition roots, and why repositories stay out of context, is in [Architecture](ARCHITECTURE.md#composition-roots).
+Components receive dependencies through Svelte context, provided by `<NickApp>`. Why there are two composition roots, and why repositories stay out of context, is in [ADR 0004](adr/0004-two-composition-roots.md).
 
 ## Injection API
 
