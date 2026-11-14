@@ -44,6 +44,8 @@ pnpm install
 
 `pnpm install` also installs the git hooks (lefthook): a Prettier check on staged files before commit, and commitlint on the commit message. Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/); releases are derived from them.
 
+Adding a package or an app, and the gates CI runs, is in [docs/adding-a-project.md](docs/adding-a-project.md).
+
 Format:
 
 ```sh
