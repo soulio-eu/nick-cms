@@ -1,0 +1,21 @@
+{
+  "name": "@nick-cms/core",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run --passWithNoTests",
+    "build": "tsc -p tsconfig.build.json && publint",
+    "check": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ]
+}
