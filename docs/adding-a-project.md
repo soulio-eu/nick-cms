@@ -48,7 +48,7 @@ Add `$dir/tsconfig.build.json`:
 }
 ```
 
-Add `$dir/src/index.ts`.
+Add `$dir/src/index.ts` (`export {};` until the package has code).
 
 ## Svelte package
 
@@ -103,8 +103,9 @@ Add `$dir/src/index.ts`.
 
    Add internal dependencies as [ADR 0002](adr/0002-one-package-per-layer.md) describes.
 
-3. Run `pnpm install` and `pnpm format`.
-4. Run the gates:
+3. For a package, add `$dir/README.md`: a heading with the package name and one sentence naming its layer.
+4. Run `pnpm install` and `pnpm format`.
+5. Run the gates:
 
    ```sh
    (
