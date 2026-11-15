@@ -15,12 +15,12 @@ Table prefix and migration sharing: [ADR 0008](adr/0008-share-the-consumers-data
     key TEXT,
     schema_version INTEGER NOT NULL,
     data TEXT NOT NULL,
-    created_at TEXT,
-    updated_at TEXT
+    created_at TEXT NOT NULL,
+    updated_at TEXT NOT NULL
   )
   ```
 
-  with `UNIQUE(type, key)` and an index on `(type, created_at)`.
+  with `UNIQUE(type, key)` and an index on `(type, created_at, id)`. Timestamps are ISO 8601 UTC text.
 
 - [First-party domain](domains.md) tables: `nick_pages`, `nick_posts`, `nick_menus`, `nick_menu_items`, `nick_users`, `nick_settings`.
 
@@ -33,7 +33,7 @@ Table prefix and migration sharing: [ADR 0008](adr/0008-share-the-consumers-data
 
 ## Adapters
 
-SQL adapters share one SQL layer ([ADR 0009](adr/0009-sql-adapters-on-a-minimal-driver.md)).
+SQL adapters share one SQL layer ([ADR 0009](adr/0009-sql-adapters-on-a-minimal-driver.md)). Every adapter runs `describeStoreContract` from `@nick-cms/core/testing` in its tests ([ADR 0016](adr/0016-adapters-store-records.md)).
 
 - **D1** (`@nick-cms/d1`).
 - **Node SQLite** ([out of v1 scope](../README.md#scope-of-v1)): over `better-sqlite3` or libSQL.
