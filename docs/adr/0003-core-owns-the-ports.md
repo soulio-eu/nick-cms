@@ -18,3 +18,9 @@ The `Store` port must allow backends beyond D1 ([scope](../../README.md#scope-of
 
 - ✅ A new backend is a new adapter; no other package changes.
 - ⚠️ The `Store` port has to fit document databases as well as SQL.
+
+## Addenda
+
+### 2026-11-15: The document store's port
+
+For documents, the repository the `Store` yields is a records port, and `core` builds the typed repositories on it ([ADR 0016](0016-adapters-store-records.md)).
