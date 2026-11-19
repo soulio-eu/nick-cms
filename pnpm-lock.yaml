@@ -237,6 +237,12 @@ importers:
         specifier: ^4.6.7
         version: 4.6.7
 
+  packages/d1:
+    devDependencies:
+      '@nick-cms/core':
+        specifier: workspace:^
+        version: link:../core
+
 packages:
 
   '@babel/code-frame@7.29.7':
