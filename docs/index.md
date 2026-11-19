@@ -7,6 +7,7 @@ These documents describe the design of Nick v1. The scope of v1 is in the [READM
 | [Architecture](ARCHITECTURE.md)                           | Package list, ADR index                                |
 | [Getting started](getting-started.md)                     | Wiring Nick into a fresh SvelteKit project             |
 | [Adding a project](adding-a-project.md)                   | Recipes for packages and apps, gates                   |
+| [Conventions](CONVENTIONS.md)                             | Cross-package rules, storage adapters                  |
 | [First-party domains](domains.md)                         | Site settings, pages, posts, menus, users              |
 | [Document store](document-store.md)                       | Typed collections, `DocumentRepository`, schemas       |
 | [Storage](storage.md)                                     | Tables, migrations, adapters                           |
